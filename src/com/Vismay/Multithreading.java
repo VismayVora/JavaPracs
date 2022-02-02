@@ -1,62 +1,53 @@
 package com.Vismay;
 
-import java.io.*;
-import java.util.*;
-
-class MyThread5 implements Runnable{
-    public void run(){
-        for(int i = 1; i<13; i++)
+class Table5 extends Thread
+{
+    public void run ()
+    {
+        long time = System.currentTimeMillis ();
+        for (int i = 1; i <= 10; i++)
         {
-            System.out.println("5 * "+i+ " = " + 5*i);
+            System.out.print (5 * i + "\t");
         }
-        try{
-            Thread.sleep(500);
-        }catch(Exception e){
-            System.out.println("An error occurred!");
-        }
+        time = System.currentTimeMillis () - time;
+        System.out.println ("Time taken for 5: " + time);
     }
 }
-
-class MyThread7 implements Runnable{
-    public void run(){
-        for(int i = 1; i<13; i++)
+class Table7 extends Thread
+{
+    public void run ()
+    {
+        long time = System.currentTimeMillis ();
+        for (int i = 1; i <= 10; i++)
         {
-            System.out.println("7 * "+i+" = "+ 7*i);
+            System.out.print (7 * i + "\t");
         }
-        try{
-            Thread.sleep(500);
-        }catch(Exception e){
-            System.out.println("An error occurred!");
-        }
+        time = System.currentTimeMillis () - time;
+        System.out.println ("Time taken for 7: " + time);
     }
 }
-
-class MyThread13 implements Runnable{
-    public void run(){
-        for(int i = 1; i<13; i++)
+class Table13 extends Thread
+{
+    public void run ()
+    {
+        long time = System.currentTimeMillis ();
+        for (int i = 1; i <= 10; i++)
         {
-            System.out.println("13 * "+i+" = "+ 13*i);
+            System.out.print (13 * i + "\t");
         }
-        try{
-            Thread.sleep(500);
-        }catch(Exception e){
-            System.out.println("An error occurred!");
-        }
+        time = System.currentTimeMillis () - time;
+        System.out.println ("Time taken for 13: " + time);
     }
 }
-public class Multithreading {
-
-    public static void main(String[] args) {
-	Runnable obj1 = new MyThread5();
-    Runnable obj2 = new MyThread7();
-    Runnable obj3 = new MyThread13();
-
-    Thread t1 = new Thread(obj1);
-    Thread t2 = new Thread(obj2);
-    Thread t3 = new Thread(obj3);
-
-    t1.start();
-    t2.start();
-    t3.start();
+public class Multithreading
+{
+    public static void main (String[]args)
+    {
+        Table5 t5 = new Table5 ();
+        Table7 t7 = new Table7 ();
+        Table13 t13 = new Table13 ();
+        t5.start ();
+        t7.start ();
+        t13.start ();
     }
 }

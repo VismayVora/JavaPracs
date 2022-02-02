@@ -34,7 +34,7 @@ interface Sports {
     void disp();
 }
 
-class Result extends Test implements Sports {
+class Results extends Test implements Sports {
     public void disp() {
         System.out.println("Sports Marks(out of 50):"+score);
     }
@@ -48,7 +48,7 @@ class Result extends Test implements Sports {
 class JavaExp10
 {
     public static void main(String args[]) {
-        Result r=new Result();
+        Results r=new Results();
         r.roll();
         r.enter();
         r.disp();
